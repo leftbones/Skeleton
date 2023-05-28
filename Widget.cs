@@ -11,8 +11,8 @@ public abstract class Widget {
 
     public bool IgnoreGlobalStyle { get; set; } = false;
 
-    public virtual float Width { get { return 0; } }
-    public virtual float Height { get { return 0; } }
+    public virtual float Width { get { return 0.0f; } }
+    public virtual float Height { get { return 0.0f; } }
 
     public Widget(Style? style=null) {
         Style = style ?? new Style();

@@ -10,13 +10,14 @@ public class Button : Widget {
     public string Text { get; set; }
     public Action? Action { get; set; }
     public bool Toggleable { get; set; }
-    public float Padding { get; set; } = 20.0f;
+    public float PaddingX { get; set; } = 20.0f;
+    public float PaddingY { get; set; } = 20.0f;
 
-    public Vector2 Size { get { return MeasureTextEx(Style.Font, Text, Style.FontSize, Style.FontSpacing) + new Vector2(Padding, Padding); } }
+    public Vector2 Size { get { return MeasureTextEx(Style.Font, Text, Style.FontSize, Style.FontSpacing) + new Vector2(PaddingX, PaddingY); } }
     public Rectangle ClickBox { get { return new Rectangle(Position.X, Position.Y, Size.X, Size.Y); } }
 
-    public override float Width { get { return MeasureTextEx(Style.Font, Text, Style.FontSize, Style.FontSpacing).X + Padding; } }
-    public override float Height { get { return MeasureTextEx(Style.Font, Text, Style.FontSize, Style.FontSpacing).Y + Padding; } }
+    public override float Width { get { return MeasureTextEx(Style.Font, Text, Style.FontSize, Style.FontSpacing).X + PaddingX; } }
+    public override float Height { get { return MeasureTextEx(Style.Font, Text, Style.FontSize, Style.FontSpacing).Y + PaddingY; } }
 
     public bool Hovered { get { return CheckCollisionPointRec(GetMousePosition(), ClickBox);  } }
     public bool Clicked { get { return Hovered && IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT);  } }
@@ -51,7 +52,6 @@ public class Button : Widget {
         if (Clicked) FG = Style.ButtonForegroundClick;
 
         DrawRectangleV(Position, Size, BG);
-        DrawTextEx(Style.Font, Text, Position + new Vector2(Padding / 2, Padding / 2), Style.FontSize, Style.FontSpacing, FG);
+        DrawTextEx(Style.Font, Text, Position + new Vector2(PaddingX / 2, PaddingY / 2), Style.FontSize, Style.FontSpacing, FG);
     }
 }
-

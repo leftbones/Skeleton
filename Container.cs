@@ -7,7 +7,7 @@ using Skeleton.Events;
 namespace Skeleton;
 
 public class Container {
-	public Skeleton? Parent { get; set; }
+	public Interface? Parent { get; set; }
 	public Vector2 Position { get; private set; }
 	public Vector2 Size { get; private set; }
 	public float Margin { get; private set; }

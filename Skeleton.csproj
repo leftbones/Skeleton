@@ -4,13 +4,14 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Raylib-cs" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\monogram.ttf" />
     <None Remove="Widgets\" />
     <None Remove="Resources\" />
     <None Remove="Resources\pixantiqua.png" />
@@ -18,10 +19,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Widgets\" />
-    <Folder Include="Resources\" />
     <Folder Include="Events\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\monogram.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\pixantiqua.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

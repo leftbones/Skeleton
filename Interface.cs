@@ -4,12 +4,12 @@ using static Raylib_cs.Raylib;
 
 namespace Skeleton;
 
-public class Skeleton {
+public class Interface {
     public Vector2 WindowSize { get; private set; }
     public List<Container> Containers { get; private set; }
     public Style? GlobalStyle { get; set; }
 
-    public Skeleton(Vector2 window_size, Style? global_style=null) {
+    public Interface(Vector2 window_size, Style? global_style=null) {
         WindowSize = window_size;
         GlobalStyle = global_style;
 
